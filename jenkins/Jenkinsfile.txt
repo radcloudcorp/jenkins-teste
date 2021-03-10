@@ -2,7 +2,8 @@ pipeline {
 agente quaisquer 
 estágios { 
         estágio ("Build") { 
-            passos {
+            passos { 
+                sh 'php --version' 
                 sh 'composer install' 
                 sh 'composer --version' 
                 sh 'cp .env.example .env' 
