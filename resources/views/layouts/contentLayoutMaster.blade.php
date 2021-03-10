@@ -26,7 +26,7 @@ $configData = Helper::applClasses();
 
 </head>
 
-
+<p>jenys fly</p>
 
 @isset($configData["mainLayoutType"])
 @extends((( $configData["mainLayoutType"] === 'horizontal') ? 'layouts.horizontalLayoutMaster' :
