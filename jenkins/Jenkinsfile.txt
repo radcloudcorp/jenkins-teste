@@ -1,0 +1,19 @@
+pipeline { 
+agente quaisquer 
+estágios { 
+        estágio ("Build") { 
+            passos { 
+                sh 'php --version' 
+                sh 'composer install' 
+                sh 'composer --version' 
+                sh 'cp .env.example .env' 
+                sh 'php chave artesanal: gerar ' 
+            } 
+        } 
+        estágio ("Teste de unidade") { 
+            etapas { 
+                sh' php artisan test ' 
+            } 
+        } 
+  } 
+}
