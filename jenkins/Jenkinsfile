@@ -1,7 +1,5 @@
 pipeline {
- agent any {
- 	args '-p 3000:3000'
- }
+ agent any
  stages {
         stage("Build") {
             steps {
@@ -19,7 +17,7 @@ pipeline {
         }
         stage("Deliver") {
             steps {
-                sh 'php artisan serve & sleep 1'
+                sh 'php artisan serve -p=3000 & sleep 1'
                 sh 'echo $! > .pidfile'
             }
         }
