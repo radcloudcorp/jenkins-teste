@@ -15,5 +15,12 @@ pipeline {
                 sh 'php artisan test'
             }
         }
+        stage("Deliver") {
+            steps {
+                sh 'php artisan serve & sleep 1'
+                echo $! > .pidfile
+            }
+        }
+
    }
 }
