@@ -17,7 +17,7 @@ pipeline {
         }
         stage("Deliver") {
             steps {
-                sh 'php artisan serve -p=3000 & sleep 1'
+                sh 'php artisan serve -port=3000 & sleep 1'
                 sh 'echo $! > .pidfile'
             }
         }
