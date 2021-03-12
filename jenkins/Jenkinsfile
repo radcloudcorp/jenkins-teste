@@ -17,10 +17,13 @@ pipeline {
         }
         stage("Deliver") {
             steps {
-                sh 'php artisan serve --port=3000 & sleep 1'
-                sh 'echo $! > .pidfile'
+                sh 'php artisan serve --port=3000'
             }
         }
-
+        stage("Deploy") {
+            steps {
+                sh 'ssh root@51.222.32.200 "cd /var/www/html/laravel && git pull origin master"'
+            }
+        }
    }
 }
