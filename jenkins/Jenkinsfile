@@ -17,7 +17,7 @@ pipeline {
         }
         stage("Deploy") {
             steps {
-                sh 'ssh root@51.222.32.200 "cd /var/www/html/laravel && git pull origin master"'
+                sh 'sshpass -p "huahua14" ssh radcloud@51.222.32.200 "cd /var/www/html/laravel && git pull origin master"'
             }
         }
    }
