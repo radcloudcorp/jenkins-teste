@@ -15,7 +15,7 @@ pipeline {
                 sh 'php artisan test'
             }
         }
-        stage("Deploy") {
+        stage("Deploy sd") {
             steps {
                 sh 'ssh radcloud@51.222.32.200 "cd /var/www/html/laravel && git pull origin master"'
             }
