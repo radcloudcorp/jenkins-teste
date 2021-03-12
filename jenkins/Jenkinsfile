@@ -15,9 +15,9 @@ pipeline {
                 sh 'php artisan test'
             }
         }
-        stage("Deploy Ô DERE") {
+        stage("Deploy") {
             steps {
-                sh 'sshpass -p "huahua14" ssh radcloud@51.222.32.200 "cd /var/www/html/laravel && git pull origin master"'
+                sh 'ssh radcloud@51.222.32.200 "cd /var/www/html/laravel && git pull origin master"'
             }
         }
    }
